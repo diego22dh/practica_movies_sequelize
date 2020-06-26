@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 const { Movie, Actor, Genre } = require("../database/models");
 const moviesController = require ("../controllers/movies");
+const actorsController = require("../controllers/actors");
 const genresController = require("../controllers/genres");
 
 const { check, body, validationResult } = require("express-validator");
@@ -10,7 +11,9 @@ const { check, body, validationResult } = require("express-validator");
 router.get("/", moviesController.home);
 router.get("/movies", moviesController.allMovies);
 router.get("/genres", genresController.allGenres);
+
 router.get("/genres/detail/:id", genresController.detail);
+router.get("/actors/detail/:id", actorsController.detail);
 
 
 //Mostrar detalle de las peliculas//

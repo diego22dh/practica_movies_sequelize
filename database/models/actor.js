@@ -12,7 +12,7 @@ module.exports = (sequelize, dataTypes) => {
             through: "actor_movie",
             foreignKey: "actor_id",
             otherKey: "movie_id",
-            foreignKey: "favorite_movie_id",
+            
         });
     };
     return Actor;

@@ -5,7 +5,7 @@ const e = require("express");
 const genresController = {
     
     allGenres: async (req, res) => {
-      const genre = await Genre.findAll();
+      const genres = await Genre.findAll();
         
             res.render("genres", { genres})
         
@@ -13,13 +13,13 @@ const genresController = {
     detail: async (req, res) => {
         const genres = await Genre.findByPk(req.params.id, 
             {
-                include: [{ association: "movies" }, { association: "actors" }],
+                include: [{ association: "movies" }],
             })
             
             if (genres == null) {
                 res.redirect("/");
             }
-            res.render("movie-genre", { genres });
+            res.render("genre-movie", { genres });
             
             
             ;

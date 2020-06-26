@@ -15,7 +15,7 @@
         <ul>
         <% if ( movie.genre)  { %>
             
-           <a href="#"><p> Genero : <%= movie.genre.name %> <p></a>
+           <a href="/genres/detail/<%= movie.genre.id %>"><p> Genero : <%= movie.genre.name %> <p></a>
             <% }  else { %>
                 <p>No tiene Genero Asociado</p>
             <% } %>  
@@ -23,7 +23,9 @@
         <ul>
             <% for( let i = 0; i < movie.actors.length; i++ ) { %>
             
-                <li><%= movie.actors[i].first_name %> <%= movie.actors[i].last_name   %>  </li>
+                <a href="/actors/detail/<%= movie.actors[i].id %>">
+                    <li><%= movie.actors[i].first_name %> <%= movie.actors[i].last_name   %>  </li>
+                </a>
             <% } %>
             
         </ul>

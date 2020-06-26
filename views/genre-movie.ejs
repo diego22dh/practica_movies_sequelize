@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= genres.name %></title>
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+    </head>
+
+    <body>
+        
+        
+        <h1> Genero : <%= genres.name %> </h1>
+
+        <ul>
+            <% for( let i = 0; i < genres.movies.length; i++ ) { %>
+            
+                <li> <%= genres.movies[i].title %>  </li>
+            <% } %>
+            
+        </ul>
+        
+       
+    </body>
+</html>
