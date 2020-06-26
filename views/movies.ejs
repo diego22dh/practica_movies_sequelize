@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Movies</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1>Movies</h1>
+    <ul>
+        <% for( let movie of movies ) { %>
+        <li>
+            <a href="/movies/detail/<%= movie.id %>">
+                <%= movie.title %>
+            </a>
+        </li>
+        <% } %>
+    </ul>
+    <div>
+        <a href="/movies/create">
+        <button type= "submit">Crear Pelicula</button>
+        </a>
+    </div>
+</body>
+
+</html>

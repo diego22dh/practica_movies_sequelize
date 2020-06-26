@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<%- include("headerPartials")  %>
+
+<body>
+    <% if( typeof errors != "undefined") {  %>
+        <p> Hay errores en el formulario</p>
+        <ul>
+            <% for ( let i = 0; i < errors.length; i++ ) { %>
+                <li> <%= errors[i].msg %> </li>
+            
+            <% } %>
+        </ul>
+    <% } %>  
+    <form action="/movies/edit/<%= movie.id %>?_method=PUT" method="POST">
+        <div>
+            <input type="text" name="title" placeholder="title" value="<%= movie.title %>">
+        </div>
+        <div>
+            <input type="number"  name="awards" placeholder="awards" value="<%= movie.awards %>">
+        </div>
+        <div>
+            <input type="number" name="revenue" placeholder="revenue" value="<%= movie.revenue %>">
+        </div>
+        <div>
+            <label>Release Date</label><input type="date" name="release_date"
+                value="<%= moment(movie.release_date).format("YYYY-MM-DD") %>">
+        </div>
+        <div>
+            <label>Length</label><input type="number" name="length" value="<%= movie.length %>">
+        </div>
+        <button>Submit</button>
+    </form>
+</body>
+
+</html>
