@@ -14,22 +14,28 @@
     <% } %>  
     <form action="/movies/edit/<%= movie.id %>?_method=PUT" method="POST">
         <div>
+            <label for="title">Titulo</label>
+            
             <input type="text" name="title" placeholder="title" value="<%= movie.title %>">
         </div>
         <div>
+            <label for="awards">Premios</label>            
             <input type="number"  name="awards" placeholder="awards" value="<%= movie.awards %>">
         </div>
         <div>
+            <label for="revenue">Ganancias</label>            
             <input type="number" name="revenue" placeholder="revenue" value="<%= movie.revenue %>">
         </div>
         <div>
-            <label>Release Date</label><input type="date" name="release_date"
+            <label for="release_date">Fecha de Estreno</label>            
+            <input type="date" name="release_date"
                 value="<%= moment(movie.release_date).format("YYYY-MM-DD") %>">
         </div>
         <div>
-            <label>Length</label><input type="number" name="length" value="<%= movie.length %>">
+            <label for="length">Duracion</label>
+            <input type="number" name="length" value="<%= movie.length %>">
         </div>
-        <button>Submit</button>
+        <button>Enviar</button>
     </form>
 </body>
 

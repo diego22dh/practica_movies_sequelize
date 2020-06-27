@@ -5,21 +5,26 @@
 <body>
     <form action="/movies/create" method="POST">
         <div>
+            <label for="title">Titulo</label>
             <input type="text" name="title" placeholder="title">
         </div>
         <div>
+            <label for="awards">Premios</label>
             <input type="number" min="0" name="awards" placeholder="awards">
         </div>
         <div>
+            <label for="revenue">Ganancias</label>
             <input type="number" name="revenue" placeholder="revenue">
         </div>
         <div>
+            <label for="release_date">Fecha de Estreno</label>
             <label>Release Date</label><input type="date" name="release_date">
         </div>
         <div>
-            <label>Length</label><input type="number" name="length">
+            <label for="length">Duracion</label>
+            <input type="number" name="length">
         </div>
-        <button>Submit</button>
+        <button>Crear !!!</button>
     </form>
 </body>
 

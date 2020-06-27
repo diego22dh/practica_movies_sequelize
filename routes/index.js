@@ -43,16 +43,6 @@ router.put(
 router.delete("/movies/edit/:id", moviesController.delete);
 
 
-
-router.post("/movies/:id", async (req, res) => {
-    const movie = await Movie.findByPk(req.params.id);
-    await movie.update({
-        ...req.body,
-    });
-    res.redirect(`/movies/${movie.id}`);
-});
-
-
 module.exports = router;
 
 
